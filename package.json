@@ -1,0 +1,21 @@
+{
+    "name": "@karasu-lab/sse",
+    "version": "0.1.0",
+    "exports": {
+        ".": "./src/index.ts"
+    },
+    "files": [
+        "src"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Karasu-Lab/sse-package.git"
+    },
+    "publishConfig": {
+        "registry": "https://npm.pkg.github.com",
+        "access": "public"
+    },
+    "devDependencies": {
+        "typescript": "^7.0.2"
+    }
+}

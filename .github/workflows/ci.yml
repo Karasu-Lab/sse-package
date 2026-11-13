@@ -1,0 +1,11 @@
+name: CI
+
+on:
+    pull_request:
+
+jobs:
+    ci:
+        uses: Karasu-Lab/JsWorkflows/.github/workflows/ci.yml@main
+        permissions:
+            contents: write
+        secrets: inherit
