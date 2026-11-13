@@ -15,7 +15,9 @@ export class SseClient<E extends SseEventMap> {
     private readonly source: EventSource;
 
     constructor(url: string | URL, options: SseClientOptions<E>) {
-        this.source = new EventSource(url.toString(), { withCredentials: options.withCredentials });
+        this.source = new EventSource(url.toString(), {
+            withCredentials: options.withCredentials,
+        });
 
         for (const [event, handler] of Object.entries(options.on)) {
             this.source.addEventListener(event, (message) => {

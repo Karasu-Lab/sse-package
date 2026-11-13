@@ -6,7 +6,8 @@ export interface SseServerStreamOptions {
 
 export class SseServerStream<E extends SseEventMap> {
     private readonly encoder = new TextEncoder();
-    private controller: ReadableStreamDefaultController<Uint8Array> | null = null;
+    private controller: ReadableStreamDefaultController<Uint8Array> | null =
+        null;
     private closed = false;
 
     private constructor(private readonly options: SseServerStreamOptions) {}
@@ -46,7 +47,9 @@ export class SseServerStream<E extends SseEventMap> {
     private write(event: string, data: unknown): void {
         if (this.closed) return;
         this.controller?.enqueue(
-            this.encoder.encode(`event: ${event}\ndata: ${JSON.stringify(data)}\n\n`),
+            this.encoder.encode(
+                `event: ${event}\ndata: ${JSON.stringify(data)}\n\n`,
+            ),
         );
     }
 

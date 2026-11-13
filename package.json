@@ -17,5 +17,8 @@
     },
     "devDependencies": {
         "typescript": "^7.0.2"
+    },
+    "versionNaming": {
+        "pattern": "{version}-{shortCommitHash}"
     }
 }
